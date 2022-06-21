@@ -1,0 +1,21 @@
+str_0 = input()
+str_1 = str_0[:12]
+s = 0
+j = 1
+for i in str_1:#遍历str_1中的元素,把数字提取出来
+    if i != '-':
+        t = int(i)
+        s = s+t*j
+        j +=1
+    else:
+        continue
+g = s%11
+if g == 10:#余数为10的时候是一个大坑，注意！
+    v = 'X'
+else:
+    v = str(g)
+if v == str_0[12]:#根据不同情况进行判断，再输出不同的结果
+    print("Right")
+else:
+    str_1 = str_1+v
+    print(str_1)
